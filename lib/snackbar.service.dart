@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 
 class SnackbarHelper {
   static void show({
-    required String title,
-    String? body,
+    String? title,
+    required String body,
     IconData? icon,
     Color? color,
     Color? textColor,
@@ -23,7 +23,7 @@ class SnackbarHelper {
         mainButton: action,
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         titleText: Text(
-          title,
+          title ?? '',
           style: Get.textTheme.titleLarge!.copyWith(
             color: textColor ?? Get.theme.secondaryHeaderColor,
           ),
@@ -31,6 +31,7 @@ class SnackbarHelper {
         messageText: Text(
           body ?? '',
           style: Get.textTheme.bodyLarge!.copyWith(
+            color: textColor ?? Get.theme.secondaryHeaderColor,
           ),
         ),
         icon: icon != null
@@ -45,8 +46,8 @@ class SnackbarHelper {
   }
 
   static void error({
-    required String title,
-    String? body,
+    String? title,
+    required String body,
   }) =>
       show(
         color: Colors.red[900],
@@ -55,8 +56,8 @@ class SnackbarHelper {
       );
 
   static void success({
-    required String title,
-    String? body,
+    String? title,
+    required String body,
   }) =>
       show(
         color: Colors.green[900],
