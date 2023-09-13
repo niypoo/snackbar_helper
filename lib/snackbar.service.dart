@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SnackbarHelper {
-  static void show({
+  static Future<void> show({
     String? title,
     required String body,
     IconData? icon,
@@ -12,9 +12,12 @@ class SnackbarHelper {
     int duration = 4,
     SnackPosition position = SnackPosition.TOP,
     SnackStyle style = SnackStyle.GROUNDED,
-  }) {
+  }) async {
     // close if exist
     Get.closeAllSnackbars();
+
+    // delayed
+    await Future.delayed(const Duration(seconds: 2));
 
     // Show
     Get.rawSnackbar(
