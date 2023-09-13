@@ -53,7 +53,7 @@ class SnackbarHelper {
     required String body,
   }) =>
       show(
-        color: Colors.red[900],
+        color: Colors.red[500],
         title: title,
         body: body,
       );
@@ -63,7 +63,7 @@ class SnackbarHelper {
     required String body,
   }) =>
       show(
-        color: Colors.green[900],
+        color: Colors.green[500],
         title: title,
         body: body,
       );
