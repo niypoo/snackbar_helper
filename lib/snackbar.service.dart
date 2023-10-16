@@ -54,7 +54,7 @@ class SnackbarHelper {
   }) =>
       show(
         color: Colors.red[500],
-        title: title,
+        title: title ?? 'Incorrectly'.tr,
         body: body,
       );
 
@@ -64,7 +64,7 @@ class SnackbarHelper {
   }) =>
       show(
         color: Colors.green[500],
-        title: title,
+        title: title ?? 'Correctly'.tr,
         body: body,
       );
 }
