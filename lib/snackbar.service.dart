@@ -37,7 +37,7 @@ class SnackbarHelper {
 
   static void error({
     String? title,
-    IconData? icon,
+    IconData icon = Icons.error_outline_outlined,
     required String body,
   }) =>
       show(
@@ -49,7 +49,7 @@ class SnackbarHelper {
 
   static void warning({
     String? title,
-    IconData? icon,
+    IconData icon = Icons.question_mark_outlined,
     required String body,
   }) =>
       show(
@@ -62,7 +62,7 @@ class SnackbarHelper {
   static void success({
     String? title,
     required String body,
-    IconData? icon,
+    IconData icon = Icons.check,
   }) =>
       show(
         color: Colors.green[500],
