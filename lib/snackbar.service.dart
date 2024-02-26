@@ -37,31 +37,37 @@ class SnackbarHelper {
 
   static void error({
     String? title,
+    IconData? icon,
     required String body,
   }) =>
       show(
         color: Colors.red[500],
         title: title ?? 'Incorrectly'.tr,
         body: body,
+        icon: icon,
       );
 
   static void warning({
     String? title,
+    IconData? icon,
     required String body,
   }) =>
       show(
         color: Colors.orange[500],
         title: title ?? 'Warning'.tr,
         body: body,
+        icon: icon,
       );
 
   static void success({
     String? title,
     required String body,
+    IconData? icon,
   }) =>
       show(
         color: Colors.green[500],
         title: title ?? 'Correctly'.tr,
         body: body,
+        icon: icon,
       );
 }
