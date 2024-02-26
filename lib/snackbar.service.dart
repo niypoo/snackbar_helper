@@ -11,7 +11,7 @@ class SnackbarHelper {
     TextButton? action,
     int duration = 4,
     SnackPosition position = SnackPosition.TOP,
-    SnackStyle style = SnackStyle.GROUNDED,
+    SnackStyle style = SnackStyle.FLOATING,
   }) async {
     // close if exist
     Get.closeAllSnackbars();
@@ -21,28 +21,15 @@ class SnackbarHelper {
 
     // Show
     Get.rawSnackbar(
+        title: title,
         message: body,
         backgroundColor: color ?? Get.theme.primaryColor,
         mainButton: action,
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-        titleText: Text(
-          title ?? '',
-          style: Get.textTheme.titleLarge!.copyWith(
-            color: textColor ?? Get.theme.secondaryHeaderColor,
-          ),
+        icon: Icon(
+          icon ?? Icons.info_outlined,
+          color: textColor ?? Get.theme.secondaryHeaderColor,
         ),
-        messageText: Text(
-          body ?? '',
-          style: Get.textTheme.bodyLarge!.copyWith(
-            color: textColor ?? Get.theme.secondaryHeaderColor,
-          ),
-        ),
-        icon: icon != null
-            ? Icon(
-                icon,
-                color: textColor ?? Get.theme.secondaryHeaderColor,
-              )
-            : null,
         snackPosition: position,
         snackStyle: style,
         duration: Duration(seconds: duration));
@@ -55,6 +42,16 @@ class SnackbarHelper {
       show(
         color: Colors.red[500],
         title: title ?? 'Incorrectly'.tr,
+        body: body,
+      );
+
+  static void warning({
+    String? title,
+    required String body,
+  }) =>
+      show(
+        color: Colors.orange[500],
+        title: title ?? 'Warning'.tr,
         body: body,
       );
 
