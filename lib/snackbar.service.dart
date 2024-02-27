@@ -11,7 +11,7 @@ class SnackbarHelper {
     TextButton? action,
     int duration = 4,
     SnackPosition position = SnackPosition.TOP,
-    SnackStyle style = SnackStyle.FLOATING,
+    SnackStyle style = SnackStyle.GROUNDED,
   }) async {
     // close if exist
     Get.closeAllSnackbars();
