@@ -65,7 +65,7 @@ class SnackbarHelper {
     IconData icon = Icons.check,
   }) =>
       show(
-        color: Colors.green[500],
+        color: Get.theme.primaryColor,
         title: title ?? 'Correctly'.tr,
         body: body,
         icon: icon,
