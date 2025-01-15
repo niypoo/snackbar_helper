@@ -70,4 +70,31 @@ class SnackbarHelper {
         body: body,
         icon: icon,
       );
+
+  static void deleted({
+    required String body,
+  }) =>
+      success(
+        title: 'Deleted'.tr,
+        body: body,
+        icon: Icons.delete_outline_rounded,
+      );
+
+  static void updated({
+    required String body,
+  }) =>
+      success(
+        title: 'Updated'.tr,
+        body: body,
+        icon: Icons.edit_note_rounded,
+      );
+
+  static void added({
+    required String body,
+  }) =>
+      success(
+        title: 'Added'.tr,
+        body: body,
+        icon: Icons.add,
+      );
 }
