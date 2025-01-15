@@ -28,6 +28,7 @@ class SnackbarHelper {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         icon: Icon(
           icon ?? Icons.info_outlined,
+          size: 40,
           color: textColor ?? Get.theme.secondaryHeaderColor,
         ),
         snackPosition: position,
